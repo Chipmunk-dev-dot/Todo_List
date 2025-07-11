@@ -57,21 +57,32 @@ function ToDoList(){
 //we use the map function to generate a list and it must have two parameters the current element and it's index
     return(<>
     <div className="todo-list">
-        <h1>TO-DO LIST</h1>
+        <h1>TO-DO LIST❤️</h1>
     </div>
 
     <label><input type="text" placeholder="Enter a task..." value={newTask} onChange={handleChange}></input></label> 
     <button className="add-button" onClick={addToList}>Add</button>
-    <ol>
+    <div className='big-box'>
+        <div className='list-box'>
+          <ol>
         {tasks.map((task, index)=>
-        <li key={index}> {/* jdfdkjdk */}
+            <li key={index}> {/* jdfdkjdk */}
+            <input type='checkbox'/>
             <span  className='text'>{task}</span>
-            <button className='delete-button' onClick={() => removeFromList(index)}>Delete</button>
+            <button className='delete-button' onClick={() => removeFromList(index)}>🗑</button>
             <button className='up-button' onClick={() => moveUp(index)}>Up</button>
             <button className='down-button' onClick={() => moveDown(index)}>Down</button>
-        
-        </li>)} 
+            
+        </li>
+
+        )} 
     </ol>
+
+    </div>
+  
+        
+    </div>
+    
     
 
 
