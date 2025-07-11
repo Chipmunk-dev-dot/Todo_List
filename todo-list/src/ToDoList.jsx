@@ -57,7 +57,7 @@ function ToDoList(){
 //we use the map function to generate a list and it must have two parameters the current element and it's index
     return(<>
     <div className="todo-list">
-        <h1>TO-DO LIST❤️</h1>
+        <h1>TO-DO LIST</h1>
     </div>
 
     <label><input type="text" placeholder="Enter a task..." value={newTask} onChange={handleChange}></input></label> 
