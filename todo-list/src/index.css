@@ -2,7 +2,7 @@ body {
  
  text-align:center ;
  margin-top: 100px;
- background-color:lightpink;
+ background-color: "#FAF9F6"
 }
 
 code {
@@ -19,6 +19,7 @@ button{
 
 }
 .add-button{
+  background-color:gray;
   
 }
  
@@ -35,4 +36,7 @@ ol{
   padding: 0; /* To delete the ol numbers */
   font-size: 1.5rem;
 }
+
+
+
 
