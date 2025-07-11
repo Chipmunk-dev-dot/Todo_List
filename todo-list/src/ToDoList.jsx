@@ -69,10 +69,7 @@ function ToDoList(){
             <button className='delete-button' onClick={() => removeFromList(index)}>Delete</button>
             <button className='up-button' onClick={() => moveUp(index)}>Up</button>
             <button className='down-button' onClick={() => moveDown(index)}>Down</button>
-            
-
-
-
+        
         </li>)} 
     </ol>
     
