@@ -61,7 +61,7 @@ function ToDoList(){
     </div>
 
     <label><input type="text" placeholder="Enter a task..." value={newTask} onChange={handleChange}></input></label> 
-    <button className="add-button" onClick={addToList}>Add</button>
+    <button className="add-button" onClick={addToList}>+</button>
     <div className='big-box'>
         <div className='list-box'>
           <ol>
