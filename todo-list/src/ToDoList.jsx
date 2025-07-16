@@ -31,9 +31,9 @@ function ToDoList(){
         //to prevent us from being able to add an empty task ,use an if statement and a trim method
         if(newTask.trim() !==""){ //trim function to reemove an whitespaces
             setTask(t =>[...t, {id:tasks.length+1,name:newTask,status:false}]); //add new tasks to the existing ones (the ...spread operator allows us to copy parts of an existing array to a new one)
-            setNewTask(""); //???what does it do
+            setNewTask(""); //clears the text input after adding a task
 
-        }
+        } 
        
 
     }
