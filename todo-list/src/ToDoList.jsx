@@ -39,7 +39,7 @@ function ToDoList(){
     }
 
     function removeFromList(index){ //index is the index of the list item we would like to delete
-        const modifiedTasks =tasks.filter((element, i)=>i !==index); //filter out all the i's that are not equal to the index  we would like to delete(put it in our new modified array)
+        const modifiedTasks =tasks.filter((element, id)=>id !==index); //filter out all the i's that are not equal to the index  we would like to delete(put it in our new modified array)
         setTask(modifiedTasks);
 
     }
@@ -52,6 +52,14 @@ function ToDoList(){
 
         }
        
+    }
+
+    function taskCompleted(index){
+       const completedTasks= [...tasks];
+       completedTasks[index].status=!completedTasks[index].status;
+        setTask(completedTasks);
+        
+
     }
 
     function moveDown(index){
@@ -83,11 +91,11 @@ function ToDoList(){
           <ol>
         {tasks.map((task, index)=>
             <li key={index}> {/* jdfdkjdk */}
-            <input type='checkbox'/>
-            <span  className='text'>{task.name}</span>
+            <input type='checkbox' onClick={() =>taskCompleted(index)}/>
+            <span  className='text' style={{textDecoration:task.status !==false ? 'line-through' :null, color:task.status ===true ? 'rgb(9, 124, 57)' : null}}>{task.name}</span>
             <button className='delete-button' onClick={() => removeFromList(index)}>🗑</button>
             <button className='up-button' onClick={() => moveUp(index)}>Up</button>
-            <button className='down-button' onClick={() => moveDown(index)}>Down</button>
+            <button className='down-button' onClick={() => moveDown(index)}>Down</button> 
             
         </li>
 
