@@ -3,52 +3,66 @@ body {
  text-align:center ;
  margin-top: 100px;
  /* background-color: "#FBF5DF"; */
-background-color: #0d0d0d;
+background-image: url("/src/images/bg_paywall.png");
 
 }
 
 
 h1{
+ font-family: "caveat", cursive;
  font-size: 4rem;
- color: rgb(9, 124, 57);
+ color:whitesmoke;
 } 
 
 button{
   font-size: 1.7rem;
-  border-radius: 8px;
+  border-radius: 10px;
   margin: 2px;
   
 
 }
 .add-button{
-   background: linear-gradient(to right, #b9eb9f, #147e6c);
+  border: none;
+  padding: 4px 20px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+  
   
 
 }
 .add-button:hover{
-  background-color: #0e2c27; 
+  background-color: #FF00FF; 
 }
  
 .delete-button{
-  background-color: dimgrey;
+  background: rgba(255, 255, 255, .05);
+  padding: 0.1px 0.1px;
+  border: none;
+  size: 2.5rem;
 }
-.delete-button:hover{
-  background-color: rgb(49, 7, 7);
-}
+
 .up-button{
-  background-color: #147e6c;
+  background: rgba(255, 255, 255, .05);
+  padding: 0.1px 0.1px;
+  border: none;
+  size: 2.5rem;
 
 }
 
 .down-button{
-    background: linear-gradient(to right, #b9eb9f, #147e6c);
+  background: rgba(255, 255, 255, .05);
+  padding: 0.1px 0.1px;
+  border: none;
+  size: 2.5rem;
 
 }
 
 input[type="text"]{
-  font-size: 1.7rem;
-  border-radius: 8px;
-  padding:5px;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  padding:4px;
+  
   
 }
 
@@ -59,15 +73,17 @@ ol{
   list-style-type:none;
 }
 li{
+  font-family: monospace;
   font-size: 2rem;
   padding: 15px;
   font-weight: bold;
-  background: linear-gradient(to right, #b9eb9f, #147e6c);
+  background: rgba(255, 255, 255, .05);
+  backdrop-filter: blur(10px);
   margin-bottom: 10px;
   border-radius: 15px;
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   
 
 }

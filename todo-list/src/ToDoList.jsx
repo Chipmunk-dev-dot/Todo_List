@@ -92,10 +92,10 @@ function ToDoList(){
         {tasks.map((task, index)=>
             <li key={index}> {/* jdfdkjdk */}
             <input type='checkbox' onClick={() =>taskCompleted(index)}/>
-            <span  className='text' style={{textDecoration:task.status !==false ? 'line-through' :null, color:task.status ===true ? 'rgb(9, 124, 57)' : null}}>{task.name}</span>
-            <button className='delete-button' onClick={() => removeFromList(index)}>🗑</button>
-            <button className='up-button' onClick={() => moveUp(index)}>Up</button>
-            <button className='down-button' onClick={() => moveDown(index)}>Down</button> 
+            <span  className='text' style={{textDecoration:task.status !==false ? 'line-through' :null, color:task.status !==false  ? '#FF00FF' : null}}>{task.name}</span>
+            <button className='delete-button' onClick={() => removeFromList(index)}>🚮</button>
+            <button className='up-button' onClick={() => moveUp(index)}>⬆️</button>
+            <button className='down-button' onClick={() => moveDown(index)}>⬇️</button> 
             
         </li>
 
