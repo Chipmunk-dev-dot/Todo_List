@@ -32,7 +32,7 @@ function ToDoList() {
       let response = await fetch("http://localhost:3000/tasks");
       const json = await response.json();
       return json;
-    } catch (error) {
+    } catch (error) {     
       console.error("ERROR ${error)");
     }
   }
@@ -47,8 +47,8 @@ function ToDoList() {
   //POST DATA
   async function postData(){
     const task={
-      id:8,
-      name:"re-do my todo list",
+      id:tasks.length+1,
+      name:newTask,
       status:false
 
     };
@@ -70,8 +70,8 @@ function ToDoList() {
    
   }
    //calling your function
-     postData().then(data => {
-    console.log('Server response:', data);}) 
+    //  postData().then(data => {
+    // console.log('Server response:', data);}) 
 
 
  
@@ -148,7 +148,7 @@ function ToDoList() {
           onChange={handleChange}
         ></input>
       </label>
-      <button className="add-button" onClick={addToList}>
+      <button className="add-button" onClick={postData}>
         +
       </button>
       <div className="big-box">
