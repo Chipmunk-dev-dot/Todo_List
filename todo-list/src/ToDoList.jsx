@@ -26,6 +26,8 @@ function ToDoList() {
       setNewTask(""); //clears the text input after adding a task
     }
   }
+
+
   //GET DATA
   async function getData() {
     try {
@@ -43,6 +45,8 @@ function ToDoList() {
       console.log(data);
     });
   }, []);
+  //   console.log("data", myTodo);
+
 
   //POST DATA
   async function postData(){
@@ -63,20 +67,35 @@ function ToDoList() {
     }) ;
       const json = await response.json();
       return json;
+      
 
     } catch (error) {
-      console.error("ERROR ${error)");
+      console.error("ERROR ",error);
     } 
    
   }
    //calling your function
     //  postData().then(data => {
     // console.log('Server response:', data);}) 
+//DELETE DATA
+    async function deleteData(id) {
+      try{
+        const response= await fetch(`http://localhost:3000/tasks/${id}`, {
+          method: "DELETE"
 
+        });
+        const json = await response.json();
+        
+            console.log("Deleted:", json);  
+
+      } catch (error) {
+      console.error("There was an error");
+    } 
+      
+    }
+    
 
  
-
-//   console.log("data", myTodo);
 
   function removeFromList(index) {
     //index is the index of the list item we would like to delete
@@ -154,12 +173,12 @@ function ToDoList() {
       <div className="big-box">
         <div className="list-box">
           <ol>
-            {tasks?.map(
-              (
-                task,
-                index //to check if the map is defined or not
-              ) => (
-                <li key={index}>{task.name}</li>
+            {tasks?.map(//to check if the map is defined or not
+              (task,index ) => (
+                <li key={index}>{task.name}
+                <button className="delete-button" onClick={()=> deleteData(task.id)}>Delete</button>
+                
+                </li>
               )
             )}
           </ol>
