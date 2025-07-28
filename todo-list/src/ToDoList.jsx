@@ -31,7 +31,7 @@ function ToDoList() {
   //GET DATA
   async function getData() {
     try {
-      let response = await fetch("http://localhost:3000/tasks");
+      let response = await fetch("http://localhost:4200/tasks");
       const json = await response.json();
       return json;
     } catch (error) {     
@@ -48,6 +48,9 @@ function ToDoList() {
   //   console.log("data", myTodo);
 
 
+  //   console.log("data", myTodo);
+
+
   //POST DATA
   async function postData(){
     const task={
@@ -57,7 +60,7 @@ function ToDoList() {
 
     };
     try{
-      const response = await fetch("http://localhost:3000/tasks",{//URL to where I am posting my data
+      const response = await fetch("http://localhost:4200/tasks",{//URL to where I am posting my data
 
       method:"POST",//DEFINES THE TYPE OF REQUEST / METHOD WE ARE SENDING
       headers:{
@@ -78,24 +81,33 @@ function ToDoList() {
     //  postData().then(data => {
     // console.log('Server response:', data);}) 
 //DELETE DATA
-    async function deleteData(id) {
-      try{
-        const response= await fetch(`http://localhost:3000/tasks/${id}`, {
-          method: "DELETE"
+async function deleteData(id) {
+  try {
+    console.log("Attempting to delete task with ID:", id);
 
-        });
+    const response = await fetch(`http://localhost:4200/tasks/${id}`, {
+      method: "DELETE"
+    });
+
+    console.log("Delete item", response);
+
+    if (response.ok) {
+      if (response.status !== 204) {
         const json = await response.json();
-        
-            console.log("Deleted:", json);  
-
-      } catch (error) {
-      console.error("There was an error");
-    } 
-      
+        console.log("Deleted:", json);
+      } else {
+        console.log("Deleted: No content returned");
+      }
+    } else {
+      console.error(`Failed to delete. Status: ${response.status}`);
     }
-    
 
- 
+  } catch (error) {
+    console.error("There was an error:", error);
+  }
+}
+
+
 
   function removeFromList(index) {
     //index is the index of the list item we would like to delete
@@ -181,6 +193,7 @@ function ToDoList() {
                 </li>
               )
             )}
+            
           </ol>
           <dialog open={open}> Edit</dialog>
         </div>
