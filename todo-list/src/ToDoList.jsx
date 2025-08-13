@@ -57,7 +57,7 @@ const createData=async()=>{
       </div>
 
       <label>
-        <input  type="text" value={newTask} placeholder="Enter a task..." onChange={(e)=> setNewTask(e.target.value)
+        <input  type="text" value={newTask} placeholder="Enter a task..." onChange={(e)=> setNewTask(e.target.value   )
     }></input>
       </label>
       <button className="add-button"  onClick={()=> createData()}>+</button>
